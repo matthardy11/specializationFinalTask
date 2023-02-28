@@ -18,3 +18,17 @@ int FindNewArrayLength(string[] array)           // узнаем длинну б
   return counter;
 }
 
+string[] FillNewArray(string[] array, int newArrLenght)    // основной метод который проходит по массиву и добавляет нужные строки в новый массив.
+{
+  int count = 0;
+  string[] result = new string[newArrLenght];
+  for(int i = 0; i < array.Length; i++)
+  {
+    if(array[i].Length <= 3)
+    {
+      result[count] = array[i];
+      count++; 
+    }
+  }
+  return result;
+}
