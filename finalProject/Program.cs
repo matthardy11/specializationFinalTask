@@ -7,32 +7,29 @@ void PrintArray(string[] array)
   {System.Console.Write(array[i] + ", ");}
 }
 
-int FindNewArrayLength(string[] array)           // узнаем длинну будущего массива для строк с длинной меньше или равно 3 символа.
+string[] FillNewArray(string[] array)         // основной метод который проходит по массиву и добавляет нужные строки в новый массив.
 {
+  int index = 0;
   int counter = 0;
 
-  for(int i = 0; i < array.Length; i++)
+  for(int i = 0; i < array.Length; i++)       // узнаем длинну будущего массива для строк с длинной меньше или равно 3 символа.
   { if (array[i].Length <= 3)
     {counter++;}
   }
-  return counter;
-}
 
-string[] FillNewArray(string[] array, int newArrLenght)    // основной метод который проходит по массиву и добавляет нужные строки в новый массив.
-{
-  int count = 0;
-  string[] result = new string[newArrLenght];
+  string[] result = new string[counter];
+  
   for(int i = 0; i < array.Length; i++)
   {
     if(array[i].Length <= 3)
     {
-      result[count] = array[i];
-      count++; 
+      result[index] = array[i];
+      index++; 
     }
   }
   return result;
 }
 
-string[] array = {"hello", "-2", "world", ":-)"};           // создаем массив строк
+string[] array = {"hello", "-2", "world", ":-)", "dfe", "23", "dfdsfdsf", "346"};           // создаем массив строк
 
-PrintArray(FillNewArray(array, FindNewArrayLength(array)));   
+PrintArray(FillNewArray(array));   
