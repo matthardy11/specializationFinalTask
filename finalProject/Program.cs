@@ -13,13 +13,16 @@ string[] FillNewArray(string[] array)         // основной метод к�
   int counter = 0;
 
   for(int i = 0; i < array.Length; i++)       // узнаем длинну будущего массива для строк с длинной меньше или равно 3 символа.
-  { if (array[i].Length <= 3)
-    {counter++;}
+  {
+    if (array[i].Length <= 3)
+    {
+      counter++;
+    }
   }
 
-  string[] result = new string[counter];
-  
-  for(int i = 0; i < array.Length; i++)
+  string[] result = new string[counter];      // создаем результирующий массив
+
+  for(int i = 0; i < array.Length; i++)       // заполняем новый массив подходящими по условию строками
   {
     if(array[i].Length <= 3)
     {
