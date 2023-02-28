@@ -7,5 +7,14 @@ void PrintArray(string[] array)
   {System.Console.Write(array[i] + ", ");}
 }
 
+int FindNewArrayLength(string[] array)           // узнаем длинну будущего массива для строк с длинной меньше или равно 3 символа.
+{
+  int counter = 0;
 
+  for(int i = 0; i < array.Length; i++)
+  { if (array[i].Length <= 3)
+    {counter++;}
+  }
+  return counter;
+}
 
