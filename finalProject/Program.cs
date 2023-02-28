@@ -32,3 +32,5 @@ string[] FillNewArray(string[] array, int newArrLenght)    // основной �
   }
   return result;
 }
+
+string[] array = {"hello", "-2", "world", ":-)"};           // создаем массив строк
